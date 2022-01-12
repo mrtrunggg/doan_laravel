@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\SanphamController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Sản phẩm nè
+Route::get('/index',[SanphamController::class, 'index']);
+// Thêm SP nè
+Route::get('/index/create',[SanphamController::class, 'create']);
+Route::post('/index/create',[SanphamController::class, 'xulycreate']);
+// Sửa SP nè
+Route::get('/index/update',[SanphamController::class, 'update']);
+Route::post('/index/update',[SanphamController::class, 'xulyupdate']);
+
+
+
+
+
+
+
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -22,3 +39,5 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+

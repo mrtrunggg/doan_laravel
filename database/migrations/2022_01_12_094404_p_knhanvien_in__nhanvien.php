@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class PKtaikhoanInTaikhoan extends Migration
+class PKnhanvienInNhanvien extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class PKtaikhoanInTaikhoan extends Migration
      */
     public function up()
     {
-        Schema::table('Taikhoan', function (Blueprint $table) {
-            $table->foreign('khachhang_id')
-            ->references('id')->on('Khachhang')
+        Schema::table('Nhanvien', function (Blueprint $table) {
+            $table->foreign('id_taikhoan')
+            ->references('id')->on('Taikhoan')
             ->onDelete('cascade'); 
-            $table->foreign('nhanvien_id')
-          ->references('id')->on('Nhanvien')
-          ->onDelete('cascade');
         });
     }
 
@@ -30,7 +27,7 @@ class PKtaikhoanInTaikhoan extends Migration
      */
     public function down()
     {
-        Schema::table('_taikhoan', function (Blueprint $table) {
+        Schema::table('Nhanvien', function (Blueprint $table) {
             //
         });
     }

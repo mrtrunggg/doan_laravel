@@ -21,6 +21,7 @@ class CreateKhachhangTable extends Migration
             $table->string('sdt');
             $table->string('diachi');
             $table->string('hinhdaidien');
+            $table->integer('id_taikhoan')->unsigned();
             $table->integer('trangthai')->nullable()->default(1);     
             $table->timestamps();
             $table->softDeletes();

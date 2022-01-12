@@ -22,6 +22,7 @@ class CreateNhanvienTable extends Migration
             $table->string('sotaikhoan');
             $table->string('diachi');
             $table->string('hinhdaidien');
+            $table->integer('id_taikhoan')->unsigned();
             $table->integer('trangthai')->nullable()->default(1);     
             $table->timestamps();
             $table->softDeletes();

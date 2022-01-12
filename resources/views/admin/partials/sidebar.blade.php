@@ -9,11 +9,35 @@
 </div>
 <ul class="app-menu">
     <li>
-        <a class="app-menu__item {{ Route::currentRouteName() == 'admin.dashboard' ? 'active' : '' }}" href="#">
+        <a class="app-menu__item" href={{route('admin.dashboard')}}>
         <i class="app-menu__icon fa fa-dashboard"></i>
         <span class="app-menu__label">Dashboard</span>
     </a>
     </li>
+    <li>
+        <a class="app-menu__item" href= {{route('indexTk')}}>
+        <i class="app-menu__icon fa fa-cogs"></i>
+            <span class="app-menu__label">Tài khoản</span>
+         </a>
+    </li>
+    <li>
+        <a class="app-menu__item" href= {{route('indexHDN')}}>
+        <i class="app-menu__icon fa fa-cogs"></i>
+            <span class="app-menu__label">Hóa đơn nhập</span>
+         </a>
+    </li>
+    <li>
+        <a class="app-menu__item" href= {{route('indexCTHDN')}}>
+        <i class="app-menu__icon fa fa-cogs"></i>
+            <span class="app-menu__label">Chi tiết hóa đơn nhập</span>
+         </a>
+    </li>
+
+
+
+
+
+
     <li>
         <a class="app-menu__item {{ Route::currentRouteName() == 'admin.settings' ? 'active' : '' }}" href="#">
         <i class="app-menu__icon fa fa-cogs"></i>

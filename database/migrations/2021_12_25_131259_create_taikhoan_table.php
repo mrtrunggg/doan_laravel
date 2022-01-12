@@ -17,8 +17,6 @@ class CreateTaikhoanTable extends Migration
             $table->increments('id');
             $table->string('tentaikhoan');
             $table->integer('matkhau');
-            $table->integer('khachhang_id')->unsigned();
-            $table->integer('nhanvien_id')->unsigned();
             $table->string('loaitk');
             $table->integer('trangthai')->nullable()->default(1);     
             $table->timestamps();
