@@ -32,6 +32,30 @@
             <span class="app-menu__label">Chi tiết hóa đơn nhập</span>
          </a>
     </li>
+    <li>
+        <a class="app-menu__item" href= {{route('sanpham')}}>
+        <i class="app-menu__icon fa fa-cogs"></i>
+            <span class="app-menu__label">Sản phẩm</span>
+         </a>
+    </li>
+    <li>
+        <a class="app-menu__item" href= {{route('loaisanpham')}}>
+        <i class="app-menu__icon fa fa-cogs"></i>
+            <span class="app-menu__label">Loại sản phẩm</span>
+         </a>
+    </li>
+    <li>
+        <a class="app-menu__item" href= {{route('nhacungcap')}}>
+        <i class="app-menu__icon fa fa-cogs"></i>
+            <span class="app-menu__label">Nhà cung cấp</span>
+         </a>
+    </li>
+    <li>
+        <a class="app-menu__item" href= {{route('nhanvien')}}>
+        <i class="app-menu__icon fa fa-cogs"></i>
+            <span class="app-menu__label">Nhân viên</span>
+         </a>
+    </li>
 
 
 
@@ -44,11 +68,6 @@
             <span class="app-menu__label">Settings</span>
          </a>
     </li>
-    <li>
-        <a class="app-menu__item {{ Route::currentRouteName() == 'admin.categories.index' ? 'active' : '' }}" href="#">
-        <i class="app-menu__icon fa fa-tags"></i>
-        <span class="app-menu__label">Categories</span>
-        </a>
-    </li>
+    
 </ul>
 </aside>
