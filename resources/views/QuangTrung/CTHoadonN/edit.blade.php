@@ -32,15 +32,15 @@
 
         <tr>
             <th>Số lượng</th>
-            <td><input type="text" name="soluomg" value="{{$thongtin->soluomg}}" require></td>
+            <td><input type="number" name="soluomg" value="{{$thongtin->soluomg}}" require></td>
         </tr>
         <tr>
             <th>Đơn giá</th>
-            <td><input type="text" name="dongia" value="{{$thongtin->soluomg}}" require></td>
+            <td><input type="number" name="dongia" value="{{$thongtin->soluomg}}" require></td>
         </tr>
         <tr>
             <th>Thành tiền</th>
-            <td><input type="text" name="thanhtien" value="{{$thongtin->thanhtien}}" require></td>
+            <td><input type="number" name="thanhtien" value="{{$thongtin->thanhtien}}" require></td>
         </tr>
         <tr>
             <th>Trạng thái</th>

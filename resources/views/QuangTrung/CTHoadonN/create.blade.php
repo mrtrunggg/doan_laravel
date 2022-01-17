@@ -34,15 +34,15 @@
 
         <tr>
             <th>Số lượng</th>
-            <td><input type="text" name="soluomg" require></td>
+            <td><input type="number" name="soluomg" require></td>
         </tr>
         <tr>
             <th>Đơn giá</th>
-            <td><input type="text" name="dongia" require></td>
+            <td><input type="number" name="dongia" require></td>
         </tr>
         <tr>
             <th>Thành tiền</th>
-            <td><input type="text" name="thanhtien" require></td>
+            <td><input type="number" name="thanhtien" require></td>
         </tr>
         <tr>
             <th>Trạng thái</th>
