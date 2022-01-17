@@ -47,6 +47,7 @@ class HoadonbanController extends Controller
     			 	->get(); 
         $dscthoadonban = DB::table('Sanpham')
     			 	->join('cthoadonban', 'sanpham.id', '=', 'cthoadonban.sanpham_id')
+                    -> where('hoadonban_id','=',$id)
     			 	->get();
         return view('KhacTrung.Hoadonban.edit',compact('thongtin','dscthoadonban','dshoadonban'));
     }
