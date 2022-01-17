@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use App\Models\CTHoadonN;
+use App\Models\Hoadonnhap;
 use Illuminate\Support\Facades\DB;
 
 
@@ -25,6 +26,9 @@ class CTHoadonNController extends Controller
     }
 
     function xulycreate(Request $req){
+        $hd =  Hoadonnhap::find($req->MaHDN);
+        $hd->tongtien = $hd->tongtien+($req->soluomg * $req->dongia);
+        $hd -> save();
         $CTHDN = new CTHoadonN();
         $CTHDN->hoadonnhap_id = $req->MaHDN;
         $CTHDN->sanpham_id = $req->MaSP;
@@ -46,8 +50,12 @@ class CTHoadonNController extends Controller
         return view('QuangTrung.CTHoadonN.edit',compact('thongtin','dsCTHoadonnhap','dsCTHoadonnhap1'));
     }
 
-    function xulyedit(Request $req, $id){       
+    function xulyedit(Request $req, $id){
+
         $CTHDN = CTHoadonN::find($id);
+        $hd =  Hoadonnhap::find($req->MaHDN);
+        $hd->tongtien = $hd->tongtien+($req->soluomg * $req->dongia)-($CTHDN->soluomg*$CTHDN->dongia) ;
+        $hd -> save();         
         $CTHDN->hoadonnhap_id = $req->MaHDN;
         $CTHDN->sanpham_id = $req->MaSP;
         $CTHDN->soluomg = $req->soluomg;
