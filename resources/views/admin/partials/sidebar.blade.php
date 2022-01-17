@@ -56,6 +56,18 @@
             <span class="app-menu__label">Nhân viên</span>
          </a>
     </li>
+    <li>
+        <a class="app-menu__item" href= {{route('indexKH')}}>
+        <i class="app-menu__icon fa fa-cogs"></i>
+            <span class="app-menu__label">Khách hàng</span>
+         </a>
+    </li>
+    <li>
+        <a class="app-menu__item" href= {{route('indexHDB')}}>
+        <i class="app-menu__icon fa fa-cogs"></i>
+            <span class="app-menu__label">Hoá đơn bán</span>
+         </a>
+    </li>
 
 
 

@@ -80,7 +80,23 @@ Route::group(['prefix' => '/'], function () {
     Route::post('/CTHoadonN/edit/{CTHDN}',[Admin\CTHoadonNController::class, 'xulyedit'])->name('xylysuaCTHDN');
     Route::get('/CTHoadonN/delete/{CTHDN}',[Admin\CTHoadonNController::class, 'xulydelete'])->name('xylyxoaCTHDN');
 
-    
+    //tai khoan ne
+    Route::get('/Khachhang/index',[Admin\KhachhangController::class, 'index'])->name('indexKH');
+    Route::get('/Khachhang/create',[Admin\KhachhangController::class, 'create'])->name('formthemKH');
+    Route::post('/Khachhang/xulycreate',[Admin\KhachhangController::class, 'xulycreate'])->name('xylythemKH');
+    Route::get('/Khachhang/edit/{KH}',[Admin\KhachhangController::class, 'edit'])->name('SuaKH');
+    Route::post('/Khachhang/edit/{KH}',[Admin\KhachhangController::class, 'xulyedit'])->name('xylysuaKH');
+    Route::get('/Khachhang/delete/{KH}',[Admin\KhachhangController::class, 'xulydelete'])->name('xylyxoaKH');
+
+
+    //Hóa đơn nhập nè
+    Route::get('/Hoadonban/index',[Admin\HoadonbanController::class, 'index'])->name('indexHDB');
+    Route::get('/Hoadonban/create',[Admin\HoadonbanController::class, 'create'])->name('formthemHDB');
+    Route::post('/Hoadonban/xulycreate',[Admin\HoadonbanController::class, 'xulycreate'])->name('xylythemHDB');
+    Route::get('/Hoadonban/edit/{HDB}',[Admin\HoadonbanController::class, 'edit'])->name('SuaHDB');
+    Route::post('/Hoadonban/edit/{HDB}',[Admin\HoadonbanController::class, 'xulyedit'])->name('xylysuaHDB');
+    Route::get('/Hoadonban/delete/{HDB}',[Admin\HoadonbanController::class, 'xulydelete'])->name('xylyxoaHDB');
+
 });
 
 
