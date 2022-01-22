@@ -14,24 +14,7 @@
         <span class="app-menu__label">Dashboard</span>
     </a>
     </li>
-    <li>
-        <a class="app-menu__item" href= {{route('indexTk')}}>
-        <i class="app-menu__icon fa fa-cogs"></i>
-            <span class="app-menu__label">Tài khoản</span>
-         </a>
-    </li>
-    <li>
-        <a class="app-menu__item" href= {{route('indexHDN')}}>
-        <i class="app-menu__icon fa fa-cogs"></i>
-            <span class="app-menu__label">Hóa đơn nhập</span>
-         </a>
-    </li>
-    <li>
-        <a class="app-menu__item" href= {{route('indexCTHDN')}}>
-        <i class="app-menu__icon fa fa-cogs"></i>
-            <span class="app-menu__label">Chi tiết hóa đơn nhập</span>
-         </a>
-    </li>
+    
     <li>
         <a class="app-menu__item" href= {{route('sanpham')}}>
         <i class="app-menu__icon fa fa-cogs"></i>
@@ -60,6 +43,24 @@
         <a class="app-menu__item" href= {{route('indexKH')}}>
         <i class="app-menu__icon fa fa-cogs"></i>
             <span class="app-menu__label">Khách hàng</span>
+         </a>
+    </li>
+    <li>
+        <a class="app-menu__item" href= {{route('indexTk')}}>
+        <i class="app-menu__icon fa fa-cogs"></i>
+            <span class="app-menu__label">Tài khoản</span>
+         </a>
+    </li>
+    <li>
+        <a class="app-menu__item" href= {{route('indexHDN')}}>
+        <i class="app-menu__icon fa fa-cogs"></i>
+            <span class="app-menu__label">Hóa đơn nhập</span>
+         </a>
+    </li>
+    <li>
+        <a class="app-menu__item" href= {{route('indexCTHDN')}}>
+        <i class="app-menu__icon fa fa-cogs"></i>
+            <span class="app-menu__label">Chi tiết hóa đơn nhập</span>
          </a>
     </li>
     <li>
