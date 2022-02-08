@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\SanphamController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,6 +24,8 @@ Route::post('/index/create',[SanphamController::class, 'xulycreate']);
 Route::get('/index/update',[SanphamController::class, 'update']);
 Route::post('/index/update',[SanphamController::class, 'xulyupdate']);
 
+Route::get('/index-user',[UserController::class, 'trangchu'])->name('user-trangchu');;
+Route::get('/shop',[UserController::class, 'dssp'])->name('user-dssp');;
 
 
 
