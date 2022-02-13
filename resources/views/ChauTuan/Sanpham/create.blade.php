@@ -2,47 +2,66 @@
 
 @section('content')
 
-<h1>Thêm mới tài khoản</h1>
+<h1>Thêm mới sản phẩmn</h1>
 
 <a href="{{route('sanpham')}}">Quay lại</a>
 <form method="POST" action="{{route('xulythemsp')}}">
 @csrf
     <table>
-
         <tr>
-            <th>Mã hóa đơn nhập</th>
+            <th>Tên sản phẩm</th>
+            <td><input type="text" name="tensp" require></td>
+        </tr>
+        <tr>
+            <th>Nhà cung cấp</th>
             <td>        
-                <select name="MaHDN" id="MaHDN">
+                <select name="MaNCC" id="MaNCC">
                     <option value="">Không nhập giá trị</option>
-                    @foreach($dsCTHoadonnhap as $a)
-                        <option value="{{$a->id}}">{{$a->id}}</option>
+                    @foreach($dsNhacungcap as $a)
+                        <option value="{{$a->id}}">{{$a->nhacungcap_name}}</option>
                     @endforeach                                    
                 </select>     
             </td>
         </tr>
         <tr>
-            <th>Mã sản phẩm</th>
+            <th>Loại sản phẩm</th>
             <td>        
-                <select name="MaSP" id="MaSP">
+                <select name="MaLSP" id="MaLSP">
                     <option value="">Không nhập giá trị</option>
-                    @foreach($dsCTHoadonnhap1 as $a)
-                        <option value="{{$a->id}}">{{$a->sanpham_name}}</option>
+                    @foreach($dsLoaisanpham as $a)
+                        <option value="{{$a->id}}">{{$a->tenloaisp}}</option>
                     @endforeach                                    
                 </select>     
             </td>
         </tr>
 
         <tr>
-            <th>Số lượng</th>
-            <td><input type="text" name="soluomg" require></td>
+            <th>Thương hiệu</th>
+            <td><input type="text" name="thuonghieu" require></td>
         </tr>
         <tr>
             <th>Đơn giá</th>
             <td><input type="text" name="dongia" require></td>
         </tr>
         <tr>
-            <th>Thành tiền</th>
-            <td><input type="text" name="thanhtien" require></td>
+            <th>Số lượng</th>
+            <td><input type="text" name="soluong" require></td>
+        </tr>
+        <tr>
+            <th>Mô tả</th>
+            <td><input type="text" name="mota" require></td>
+        </tr>
+        <tr>
+            <th>Chất liệu</th>
+            <td><input type="text" name="chatlieu" require></td>
+        </tr>
+        <tr>
+            <th>Kích thước</th>
+            <td><input type="text" name="kichthuoc" require></td>
+        </tr>
+        <tr>
+            <th>Hình ảnh</th>
+            <td><input type="text" name="hinhanh" require></td>
         </tr>
         <tr>
             <th>Trạng thái</th>

@@ -15,17 +15,10 @@ use App\Http\Controllers\UserController;
 |
 */
 
-// Sản phẩm nè
-Route::get('/index',[SanphamController::class, 'index']);
-// Thêm SP nè
-Route::get('/index/create',[SanphamController::class, 'create']);
-Route::post('/index/create',[SanphamController::class, 'xulycreate']);
-// Sửa SP nè
-Route::get('/index/update',[SanphamController::class, 'update']);
-Route::post('/index/update',[SanphamController::class, 'xulyupdate']);
 
-Route::get('/index-user',[UserController::class, 'trangchu'])->name('user-trangchu');;
-Route::get('/shop',[UserController::class, 'dssp'])->name('user-dssp');;
+Route::get('/index',[UserController::class, 'trangchu'])->name('user-trangchu');;
+Route::get('/shop',[UserController::class, 'dssp'])->name('user-dssp');
+Route::get('/profile',[UserController::class, 'ttcn'])->name('user-ttcn');
 
 
 
