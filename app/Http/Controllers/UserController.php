@@ -25,7 +25,17 @@ class UserController extends Controller
         return view('user.shop',compact('dsSP'));
     }
 
+    function ctsp($id)
+    {
+        $SP =  Sanpham::find($id);      
+        return view('user.product_detail',compact('SP'));
+    }
 
+    function timkiem(Request $req)
+    {
+       $kq= DB::table('Sanpham')->where('sanpham_name','like','%'.$req->timkiem.'%')->get();
+       return view('user.timkiem',compact('kq'));
+    }
 }
 
 // function DanhSachLop($id){
