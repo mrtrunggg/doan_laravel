@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Sanpham;
+use App\Models\Khachhang;
 use Illuminate\Support\Facades\DB;
 
 
@@ -24,10 +25,30 @@ class UserController extends Controller
         $dsSP = DB::table('Sanpham')->where('trangthai','=','1')->get();   
         return view('user.shop',compact('dsSP'));
     }
-    function ttcn()
+    function ttcn($id)
     {
-        $KH = DB::table('Khachhang')->where('trangthai','=','1')->get();   
+        // $KH = DB::table('Khachhang')->where('trangthai','=','1')->get(); 
+        $KH = Khachhang::find($id);
         return view('user.profile',compact('KH'));
+    }
+    function xulyttcn(Request $req, $id)
+    {
+        $KH = khachhang::find($id);
+        $KH->khachhang_name = $req->Tenkhachhang;
+        $KH->email = $req->email;
+        $KH->atm = $req->atm;
+        $KH->sdt = $req->sdt;
+        $KH->diachi = $req->diachi;
+        if($req->hinhdaidien == '')
+        {
+            $KH->hinhdaidien = $req->tenhinhdaidien;
+        }else{
+            $KH->hinhdaidien = $req->hinhdaidien;
+        }
+        $KH->trangthai = $req->TrangThai;
+        $KH -> save();    
+        $dskhachhang = khachhang::all();
+       return redirect()->route('indexKH',compact('dskhachhang'));
     }
 
 

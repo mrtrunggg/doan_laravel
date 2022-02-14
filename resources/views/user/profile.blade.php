@@ -32,237 +32,45 @@
 					<!-- /PROFILE HEADER -->
 
 					<!-- PROFILE DATA -->
+					
 					<div class="profile-data">
 						<div class="featured-form">
-							<form id="profile-info-form" class="westeros-form">
-								<div>
-									<label class="rl-label">First Name</label>
-									<input type="text" placeholder="Enter your first name here...">
-								</div>
-								<div>
-									<label class="rl-label">Last Name</label>
-									<input type="text" placeholder="Enter your last name here...">
-								</div>
+							<form id="profile-info-form" class="westeros-form" ">
+							@csrf
 								<div>
 									<label class="rl-label">Email Address</label>
-									<input type="text" placeholder="Enter your email address here...">
+									<input type="text" name="email" value="{{$KH->email}}" required>
 								</div>
 								<div>
-									<label class="rl-label">Phone Number</label>
-									<input type="text" placeholder="Enter your phone number here...">
+									<label class="rl-label">Full Name</label>
+									<input type="text" name="Tenkhachhang" value="{{$KH->khachhang_name}}" required>
 								</div>
 								<div>
-									<label class="rl-label">Birth Date</label>
-									<label for="month">
-										<select name="month" id="month">
-											<option value="0">MM</option>
-											<option value="1">01</option>
-											<option value="2">02</option>
-											<option value="3">03</option>
-											<option value="4">04</option>	
-										</select>
-										<!-- SVG ARROW -->
-										<svg class="svg-arrow select-arrow">
-											<use xlink:href="#svg-arrow"></use>
-										</svg>
-										<!-- /SVG ARROW -->
-									</label>
-									<label for="day">
-										<select name="day" id="day">
-											<option value="0">DD</option>
-											<option value="1">01</option>
-											<option value="2">02</option>
-											<option value="3">03</option>
-											<option value="4">04</option>	
-										</select>
-										<!-- SVG ARROW -->
-										<svg class="svg-arrow select-arrow">
-											<use xlink:href="#svg-arrow"></use>
-										</svg>
-										<!-- /SVG ARROW -->
-									</label>
-									<label for="year">
-										<select name="year" id="year">
-											<option value="0">YYYY</option>
-											<option value="1">1990</option>
-											<option value="2">1991</option>
-											<option value="3">1992</option>
-											<option value="4">1993</option>	
-										</select>
-										<!-- SVG ARROW -->
-										<svg class="svg-arrow select-arrow">
-											<use xlink:href="#svg-arrow"></use>
-										</svg>
-										<!-- /SVG ARROW -->
-									</label>
+									<label class="rl-label">Card number</label>
+									<input type="text" name="atm" value="{{$KH->atm}}" required">
 								</div>
-								<div class="gender">
-									<label class="rl-label">Gender</label>
-									<input type="radio" id="male" name="gender" value="male" checked>
-									<label for="male"><span class="radio"><span></span></span>Male</label>
-									<input type="radio" id="female" name="gender" value="female">
-									<label for="female"><span class="radio"><span></span></span>Female</label>
+								<div>
+									<label class="rl-label">Phone number</label>
+									<input type="text" name="sdt" value="{{$KH->sdt}}" required">
+								</div>
+								<div>
+									<label class="rl-label">Address</label>
+									<input type="text" name="diachi" value="{{$KH->diachi}}" required">
+								</div>
+								<div>
+									
+									<label class="rl-label">Images</label>
+									<img src="{{ asset('user/images/blog/'.$KH->hinhdaidien.'') }}"  height="126px">
+									<input type="file" >
 								</div>
 							</form>
+							
 						</div>
-					</div>
-					<!-- /PROFILE DATA -->
-
-					<!-- PROFILE HEADER -->
-					<h5 class="profile-header">
-						<span>02</span>Billing Information
-						<!-- SVG PLUS -->
-						<svg class="plus">
-							<rect class="vertical" x="4" width="4" height="12"/>
-							<rect y="4" width="12" height="4"/>
-						</svg>
-						<!-- /SVG PLUS -->
-					</h5>
-					<!-- /PROFILE HEADER -->
-
-					<!-- PROFILE DATA -->
-					<div class="profile-data">
-						<div class="featured-form">
-							<form class="westeros-form">
-								<div>
-									<label class="rl-label required">First Name</label>
-									<input type="text" placeholder="Enter your first name here...">
-								</div>
-								<div>
-									<label class="rl-label required">Last Name</label>
-									<input type="text" placeholder="Enter your last name here...">
-								</div>
-								<div>
-									<label class="rl-label required">Email Address</label>
-									<input type="text" placeholder="Enter your email address here...">
-								</div>
-								<div>
-									<label class="rl-label required">Phone Number</label>
-									<input type="text" placeholder="Enter your phone number here...">
-								</div>
-								<div>
-									<label class="rl-label">Company Name</label>
-									<input type="text" placeholder="Enter your company name here...">
-								</div>
-								<div>
-									<label class="rl-label required">Address</label>
-									<input type="text" placeholder="Enter your billing address here...">
-								</div>
-								<div>
-									<label class="rl-label required">Country</label>
-									<label for="country1">
-										<select name="country" id="country1">
-											<option value="0">Select your country...</option>
-											<option value="1">United States</option>
-											<option value="2">England</option>
-											<option value="3">France</option>
-											<option value="4">Spain</option>	
-										</select>
-										<!-- SVG ARROW -->
-										<svg class="svg-arrow select-arrow">
-											<use xlink:href="#svg-arrow"></use>
-										</svg>
-										<!-- /SVG ARROW -->
-									</label>
-								</div>
-								<div>
-									<label class="rl-label required">Town / City</label>
-									<input type="text" placeholder="Enter your town / city here...">
-								</div>
-								<div>
-									<label class="rl-label required">State / Province</label>
-									<input type="text" placeholder="Enter your state / province here...">
-								</div>
-								<div>
-									<label class="rl-label required">Postcode / Zip</label>
-									<input type="text" placeholder="Enter your zipcode here...">
-								</div>
-							</form>
-						</div>
-					</div>
-					<!-- /PROFILE DATA -->
-
-					<!-- PROFILE HEADER -->
-					<h5 class="profile-header">
-						<span>03</span>Shipping Information
-						<!-- SVG PLUS -->
-						<svg class="plus">
-							<rect class="vertical" x="4" width="4" height="12"/>
-							<rect y="4" width="12" height="4"/>
-						</svg>
-						<!-- /SVG PLUS -->
-					</h5>
-					<!-- /PROFILE HEADER -->
-
-					<!-- PROFILE DATA -->
-					<div class="profile-data">
-						<div class="featured-form">
-							<form class="westeros-form">
-								<div>
-									<label class="rl-label required">First Name</label>
-									<input type="text" placeholder="Enter your first name here...">
-								</div>
-								<div>
-									<label class="rl-label required">Last Name</label>
-									<input type="text" placeholder="Enter your last name here...">
-								</div>
-								<div>
-									<label class="rl-label required">Email Address</label>
-									<input type="text" placeholder="Enter your email address here...">
-								</div>
-								<div>
-									<label class="rl-label required">Phone Number</label>
-									<input type="text" placeholder="Enter your phone number here...">
-								</div>
-								<div>
-									<label class="rl-label">Company Name</label>
-									<input type="text" placeholder="Enter your company name here...">
-								</div>
-								<div>
-									<label class="rl-label required">Address</label>
-									<input type="text" placeholder="Enter your billing address here...">
-								</div>
-								<div>
-									<label class="rl-label required">Country</label>
-									<label for="country2">
-										<select name="country" id="country2">
-											<option value="0">Select your country...</option>
-											<option value="1">United States</option>
-											<option value="2">England</option>
-											<option value="3">France</option>
-											<option value="4">Spain</option>	
-										</select>
-										<!-- SVG ARROW -->
-										<svg class="svg-arrow select-arrow">
-											<use xlink:href="#svg-arrow"></use>
-										</svg>
-										<!-- /SVG ARROW -->
-									</label>
-								</div>
-								<div>
-									<label class="rl-label required">Town / City</label>
-									<input type="text" placeholder="Enter your town / city here...">
-								</div>
-								<div>
-									<label class="rl-label required">State / Province</label>
-									<input type="text" placeholder="Enter your state / province here...">
-								</div>
-								<div>
-									<label class="rl-label required">Postcode / Zip</label>
-									<input type="text" placeholder="Enter your zipcode here...">
-								</div>
-								<div class="full-input">
-									<label class="rl-label">Special Requests</label>
-									<textarea placeholder="Write your special requests or notes for us to know here..."></textarea>
-								</div>
-							</form>
-						</div>
-					</div>
+					</div>	
 					<!-- /PROFILE DATA -->
 				</div>
 				<!-- /PROFILE INFO -->
-
-				<button form="profile-info-form" class="button profile-button">Save all the changes</button>
+				<button form="profile-info-form" class="button profile-button" type="submit">Save all the changes</button>
 			</div>
 			<!-- /SHOP PRODUCTS -->
 			<div class="clearfix"></div>
