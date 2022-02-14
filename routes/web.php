@@ -16,10 +16,17 @@ use App\Http\Controllers\UserController;
 */
 
 
+
+Route::get('/index-user',[UserController::class, 'trangchu'])->name('user-trangchu');
+Route::get('/shop',[UserController::class, 'dssp'])->name('user-dssp');
+Route::get('/product/{SP}',[UserController::class, 'ctsp'])->name('chitietsanpham');
+Route::post('/timkiem',[UserController::class, 'timkiem'])->name('timkiemsanpham');
+
 Route::get('/index',[UserController::class, 'trangchu'])->name('user-trangchu');;
 Route::get('/shop',[UserController::class, 'dssp'])->name('user-dssp');
 Route::get('/profile/{id}',[UserController::class, 'ttcn'])->name('user-ttcn');
 Route::post('/profile/{id}',[UserController::class, 'xulyttcn'])->name('user-ttcn-edit');
+
 
 
 

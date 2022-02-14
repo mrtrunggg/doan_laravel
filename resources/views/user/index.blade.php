@@ -99,13 +99,21 @@
 			
 		<li class="list-item">
 					<!-- ACTIONS -->
+					
 					<div class="actions">
 						<figure class="liquid">					
-						
+							
 							<img src="{{ asset('user/images/items/'.$a->hinhanh.'') }}" alt="product1">
 						</figure>
 						<div>
-																	
+						
+							<a href="{{route('chitietsanpham',['SP'=>$a->id])}}" class="button full-view">
+								<!-- SVG FULLVIEW -->
+								<svg class="svg-fullview">
+									<use xlink:href="#svg-fullview"></use>	
+								</svg>
+								<!-- /SVG FULLVIEW -->
+							</a>
 						</div>
 					</div>
 					<!-- /ACTIONS -->

@@ -3,6 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+	
+
 
 	<link rel="stylesheet" href="{{ asset('user/css/vendor/jquery.range.css') }}">
 	<link rel="stylesheet" href="{{ asset('user/css/vendor/owl.carousel.css') }}">
@@ -34,6 +36,11 @@
 <script src="{{ asset('user/js/menu.js') }}"></script>
 <!-- Home -->
 <script src="{{ asset('user/js/home.js') }}"></script>
+<script src="{{ asset('user/js/shop.js') }}"></script>
+<script src="{{ asset('user/js/full-view.js') }}"></script>
+<script src="{{ asset('user/js/product-builder.js') }}"></script>
+
+
 </body>
 </html>
 

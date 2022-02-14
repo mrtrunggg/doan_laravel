@@ -73,24 +73,10 @@
 					</a>
 				</div>
 				<!-- /LOGO -->
-				<form class="westeros-form">
-					<label for="categories" class="select-block">
-						<select name="categories" id="categories">
-							<option value="0">All Categories</option>
-							<option value="1">T-Shirts</option>
-							<option value="2">Pin Badges</option>
-							<option value="3">Custom Sneakers</option>
-							<option value="4">Phone Cases</option>	
-						</select>
-						<!-- SVG ARROW -->
-						<svg class="svg-arrow select-arrow">
-							<use xlink:href="#svg-arrow"></use>
-						</svg>
-						<!-- /SVG ARROW -->
-					</label>
-					<input type="text" name="search" id="search" placeholder="Search Our Catalog...">
+				<form class="westeros-form" method="POST" action="{{route('timkiemsanpham')}}">
+					@csrf	
+					<input type="text" name="timkiem" id="search" placeholder="Search Our Catalog...">
 					<input type="image" src="{{ asset('user/images/icons/search-icon.png') }}" alt="search-icon">
-
 				</form>
 
 				<!-- WESTEROS DROPDOWN CONTAINER-->
