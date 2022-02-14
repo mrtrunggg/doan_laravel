@@ -13,11 +13,13 @@ class CreateTaikhoanTable extends Migration
      */
     public function up()
     {
-        Schema::create('Taikhoan', function (Blueprint $table) {
+        Schema::create('Taikhoans', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('tentaikhoan');
-            $table->integer('matkhau');
-            $table->string('loaitk');
+            $table->string('name');
+            $table->string('email');
+            $table->string('password');
+            $table->rememberToken();
+            $table->string('loaitk')->nullable()->default(1);
             $table->integer('trangthai')->nullable()->default(1);     
             $table->timestamps();
             $table->softDeletes();          
@@ -40,7 +42,7 @@ class CreateTaikhoanTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Taikhoan');
+        Schema::dropIfExists('Taikhoans');
     }
 }
 

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class LoginController extends Controller
 {
@@ -47,9 +48,17 @@ class LoginController extends Controller
         ]);
         if (Auth::guard('admin')->attempt([
             'email' => $request->email,
-            'password' => $request->password
+            'password' => $request->password,
+            'loaitk'=>2
         ], $request->get('remember'))) {
             return redirect()->intended(route('admin.dashboard'));
+        }
+        if (Auth::guard('admin')->attempt([
+            'email' => $request->email,
+            'password' => $request->password,
+            'loaitk'=>1
+        ], $request->get('remember'))) {
+            return redirect()->intended(route('users.dashboard'));
         }
         return back()->withInput($request->only('email', 'remember'));
     }
