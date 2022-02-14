@@ -20,9 +20,9 @@ Route::group(['prefix' => '/'], function () {
         Route::get('index',[Admin\SanphamController::class, 'index'])->name('sanpham');
         Route::get('create',[Admin\SanphamController::class, 'create'])->name('themsp');
         Route::post('xulycreate',[Admin\SanphamController::class, 'xulycreate'])->name('xulythemsp');
-        Route::get('edit/{TK}',[Admin\SanphamController::class, 'edit'])->name('suasp');
-        Route::post('edit/{TK}',[Admin\SanphamController::class, 'xulyedit'])->name('xulysuasp');
-        Route::get('delete/{TK}',[Admin\SanphamController::class, 'xulydelete'])->name('xoasp');
+        Route::get('edit/{SP}',[Admin\SanphamController::class, 'edit'])->name('suasp');
+        Route::post('edit/{SP}',[Admin\SanphamController::class, 'xulyedit'])->name('xulysuasp');
+        Route::get('delete/{SP}',[Admin\SanphamController::class, 'xulydelete'])->name('xoasp');
     });
 
     //Loại sản phẩm
@@ -30,9 +30,9 @@ Route::group(['prefix' => '/'], function () {
         Route::get('index',[Admin\LoaisanphamController::class, 'index'])->name('loaisanpham');
         Route::get('create',[Admin\LoaisanphamController::class, 'create'])->name('themlsp');
         Route::post('xulycreate',[Admin\LoaisanphamController::class, 'xulycreate'])->name('xulythemlsp');
-        Route::get('edit/{TK}',[Admin\LoaisanphamController::class, 'edit'])->name('sualsp');
-        Route::post('edit/{TK}',[Admin\LoaisanphamController::class, 'xulyedit'])->name('xulysualsp');
-        Route::get('delete/{TK}',[Admin\LoaisanphamController::class, 'xulydelete'])->name('xoalsp');
+        Route::get('edit/{LSP}',[Admin\LoaisanphamController::class, 'edit'])->name('sualsp');
+        Route::post('edit/{LSP}',[Admin\LoaisanphamController::class, 'xulyedit'])->name('xulysualsp');
+        Route::get('delete/{LSP}',[Admin\LoaisanphamController::class, 'xulydelete'])->name('xoalsp');
     });
 
     //Nhân viên
@@ -40,9 +40,9 @@ Route::group(['prefix' => '/'], function () {
         Route::get('index',[Admin\NhanvienController::class, 'index'])->name('nhanvien');
         Route::get('create',[Admin\NhanvienController::class, 'create'])->name('themnv');
         Route::post('xulycreate',[Admin\NhanvienController::class, 'xulycreate'])->name('xulythemnv');
-        Route::get('edit/{TK}',[Admin\NhanvienController::class, 'edit'])->name('suanv');
-        Route::post('edit/{TK}',[Admin\NhanvienController::class, 'xulyedit'])->name('xulysuanv');
-        Route::get('delete/{TK}',[Admin\NhanvienController::class, 'xulydelete'])->name('xulyxoanv');
+        Route::get('edit/{NV}',[Admin\NhanvienController::class, 'edit'])->name('suanv');
+        Route::post('edit/{NV}',[Admin\NhanvienController::class, 'xulyedit'])->name('xulysuanv');
+        Route::get('delete/{NV}',[Admin\NhanvienController::class, 'xulydelete'])->name('xoanv');
     });
     
     //Nhà cung cấp
@@ -50,10 +50,11 @@ Route::group(['prefix' => '/'], function () {
         Route::get('index',[Admin\NhacungcapController::class, 'index'])->name('nhacungcap');
         Route::get('create',[Admin\NhacungcapController::class, 'create'])->name('themncc');
         Route::post('xulycreate',[Admin\NhacungcapController::class, 'xulycreate'])->name('xulythemncc');
-        Route::get('edit/{TK}',[Admin\NhacungcapController::class, 'edit'])->name('suancc');
-        Route::post('edit/{TK}',[Admin\NhacungcapController::class, 'xulyedit'])->name('xulysuancc');
-        Route::get('delete/{TK}',[Admin\NhacungcapController::class, 'xulydelete'])->name('xulyxoancc');
+        Route::get('edit/{NCC}',[Admin\NhacungcapController::class, 'edit'])->name('suancc');
+        Route::post('edit/{NCC}',[Admin\NhacungcapController::class, 'xulyedit'])->name('xulysuancc');
+        Route::get('delete/{NCC}',[Admin\NhacungcapController::class, 'xulydelete'])->name('xoancc');
     });
+  
     
     //tai khoan ne
     Route::get('/Taikhoan/index',[Admin\TaikhoanController::class, 'index'])->name('indexTk');

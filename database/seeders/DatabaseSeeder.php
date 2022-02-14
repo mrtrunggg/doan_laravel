@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Admin;
+use App\Models\Taikhoan;
 use Faker\Factory as Faker;
 
 class DatabaseSeeder extends Seeder
@@ -16,10 +16,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-        Admin::create([
-        'name' => 'Trung',
-        'email' => 'trung@gmail.com',
-        'password' => bcrypt('123456'),
-        ]);
+        Taikhoan::create([
+            'name' => 'Trung',
+            'email' => 'trung@gmail.com',
+            'password' => bcrypt('123456'),
+            ]);
     }
 }

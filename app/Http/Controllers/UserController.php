@@ -24,6 +24,12 @@ class UserController extends Controller
         $dsSP = DB::table('Sanpham')->where('trangthai','=','1')->get();   
         return view('user.shop',compact('dsSP'));
     }
+    function ttcn()
+    {
+        $KH = DB::table('Khachhang')->where('trangthai','=','1')->get();   
+        return view('user.profile',compact('KH'));
+    }
+
 
     function ctsp($id)
     {

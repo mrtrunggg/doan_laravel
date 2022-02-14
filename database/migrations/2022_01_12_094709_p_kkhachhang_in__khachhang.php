@@ -15,7 +15,7 @@ class PKkhachhangInKhachhang extends Migration
     {
         Schema::table('Khachhang', function (Blueprint $table) {
             $table->foreign('id_taikhoan')
-            ->references('id')->on('Taikhoan')
+            ->references('id')->on('Taikhoans')
             ->onDelete('cascade');
         });
     }

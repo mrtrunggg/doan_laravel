@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use Validator;
-use App\Models\Admin;
+use App\Models\Taikhoan;
 class RegisterController extends Controller
 {
     use AuthenticatesUsers;
@@ -27,10 +27,11 @@ class RegisterController extends Controller
         //     'password' => 'required|min:6',
         //     'password_confirmation' => 'required|min:6'
         // ]);
-        Admin::create([
+        Taikhoan::create([
             'name' =>$req->name,
             'email' => $req->email,
             'password' => bcrypt($req->password),
+            'trangthai' => 1,
         ]);
         //return redirect()->route('admin.auth.login');
         return view('admin.auth.login');

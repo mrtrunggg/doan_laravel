@@ -15,7 +15,7 @@ class PKnhanvienInNhanvien extends Migration
     {
         Schema::table('Nhanvien', function (Blueprint $table) {
             $table->foreign('id_taikhoan')
-            ->references('id')->on('Taikhoan')
+            ->references('id')->on('Taikhoans')
             ->onDelete('cascade'); 
         });
     }
