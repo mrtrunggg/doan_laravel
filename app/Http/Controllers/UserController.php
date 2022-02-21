@@ -42,6 +42,30 @@ class UserController extends Controller
         $KH =  Khachhang::find($id);      
         return view('user.profile',compact('KH'));
     }
+
+ 
+    function xulyttcn(Request $req, $id)
+    {
+        $KH = khachhang::find($id);
+        $KH->khachhang_name = $req->Tenkhachhang;
+        $KH->email = $req->email;
+        $KH->atm = $req->atm;
+        $KH->sdt = $req->sdt;
+        $KH->diachi = $req->diachi;
+        if($req->hinhdaidien == '')
+        {
+            $KH->hinhdaidien = $req->tenhinhdaidien;
+        }else{
+            $KH->hinhdaidien = $req->hinhdaidien;
+        }
+        $KH->trangthai = $req->TrangThai;
+        $KH -> save();    
+        $dskhachhang = khachhang::all();
+       return redirect()->route('indexKH',compact('dskhachhang'));
+    }
+
+
+
     function ctsp($id)
     {
         $SP =  Sanpham::find($id);      
@@ -57,44 +81,3 @@ class UserController extends Controller
     }
 }
 
-// function DanhSachLop($id){
-//     $danhsachlop = DB::table('lop')->join('hoc_sinh_hoc_lop','lop.id','=','hoc_sinh_hoc_lop.ma_lop')->select('lop.ma_lop','so_luong','ten_lop','trang_thai')->where('hoc_sinh_hoc_lop.ma_hoc_sinh','=',$id)->where('lop.trang_thai','=','1')->get();
-
-//     $idhs = $id;
-//     return view('hoc-sinh-danh-sach-lop',compact('danhsachlop','idhs'));
-// }
-
-
-// @forelse($danhsachlop as $a)
-// <tr>
-//     <th class="column2">{{$a->ma_lop}}</th>
-//     <th class="column3">{{$a->ten_lop}}</th>
-//     <th class="column3">{{$a->so_luong}}</th>
-//     <th class="column3"><a href="#">View</a></th>
-// </tr>
-// @empty
-// <tr>
-//     <td colspan="3">Không có dữ liệu</td>
-// </tr>
-// @endforelse
-
-
-
-
-// <tr>
-//     <th class="column2">{{$a->ma_lop}}</th>
-//     <th class="column3">{{$a->ten_lop}}</th>
-//     <th class="column3">{{$a->ho_ten}}</th>
-//     <th class="column6">{{$a->so_luong}}</th>
-//     <th class="column6">{{$a->thoi_gian}}</th>
-//     <th class="column2"><a class="btn btn--radius btn--green" href="{{route('ds-hoc-sinh',['gv'=>$a->ma_giao_vien,'id'=>$a->id])}}">Edit</a>| <a class="btn btn--radius btn--green" href="{{route('from-xoa-lop',['gv'=>$a->ma_giao_vien,'id'=>$a->id])}}" onclick="return confirm('Bạn có muốn xoá lớp học này không?')">Delete</a>
-// </tr>
-
-
-// function DanhSachHocSinh($idgv, $idlop){
-//     $thongtinlop = DB::table('hoc_sinh')->join('hoc_sinh_hoc_lop','hoc_sinh.id','=','hoc_sinh_hoc_lop.ma_hoc_sinh')->where('ma_lop','=',$idlop)->where('trang_thai_lop','=','1')->get();
-//     $lop =Lop::find($idlop);
-//     $giaovien = GiaoVien::find($idgv);
-   
-    
-// return view('edit-danh-sach-lop',compact('thongtinlop','lop','giaovien'));}
