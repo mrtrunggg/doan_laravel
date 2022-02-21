@@ -51,7 +51,7 @@
 	<!-- PRODUCT SHOWCASE -->
 	<div class="product-showcase-wrap">
 		<section class="product-showcase">
-			<h3 class="title">Our Featured Products</h3>
+			<h3 class="title">Selling Products</h3>
 			<!-- SLIDE CONTROLS -->
 			<ul class="slide-controls">
 				<!-- LEFT CONTROL -->
@@ -95,9 +95,9 @@
 			<!-- PRODUCT LIST -->
 			<ul id="owl-f-products" class="product-list grid owl-carousel">
 
-			@foreach ($dsSP as $a)
+			@foreach ($dsSPbanchay as $a)
 			
-		<li class="list-item">
+			<li class="list-item">
 					<!-- ACTIONS -->
 					
 					<div class="actions">
@@ -146,12 +146,20 @@
 					<!-- /DESCRIPTION -->
 		</li>
 		@endforeach   
-				
+		
+		
 			</ul>
 			<!-- /PRODUCT LIST -->
 		</section>
 	</div>
 	<!-- /PRODUCT SHOWCASE -->
+
+
+
+<!-- PRODUCT SHOWCASE -->
+
+
+
 
 
 	<!-- INSTITUTIONAL -->

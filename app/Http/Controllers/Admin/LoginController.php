@@ -58,7 +58,7 @@ class LoginController extends Controller
             'password' => $request->password,
             'loaitk'=>1
         ], $request->get('remember'))) {
-            return redirect()->intended(route('users.dashboard'));
+            return redirect()->intended(route('user-trangchu'));
         }
         return back()->withInput($request->only('email', 'remember'));
     }

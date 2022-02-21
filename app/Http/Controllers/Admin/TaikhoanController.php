@@ -11,7 +11,7 @@ class TaikhoanController extends Controller
 {
     function index()
     {
-        $dstaikhoan = DB::table('Taikhoan')->where('trangthai','=','1')->get();   
+        $dstaikhoan = DB::table('Taikhoans')->where('trangthai','=','1')->get();   
         return view('QuangTrung.Taikhoan.index',compact('dstaikhoan'));
     }
 
@@ -24,12 +24,12 @@ class TaikhoanController extends Controller
 
     function xulycreate(Request $req){
         $TK = new Taikhoan();
-        $TK->tentaikhoan = $req->Tentaikhoan;
-        $TK->matkhau = $req->MatKhau;
+        $TK->name = $req->name;
+        $TK->password = $req->password;
         $TK->loaitk = $req->LoaiTk;
         $TK->trangthai = $req->TrangThai;
         $TK -> save();
-        $dstaikhoan = Taikhoan::all();
+        $dstaikhoan = Taikhoans::all();
       
        return redirect()->route('indexTk',compact('dstaikhoan'));
     }
@@ -43,8 +43,8 @@ class TaikhoanController extends Controller
 
     function xulyedit(Request $req, $id){       
         $Tk = Taikhoan::find($id);
-        $Tk->tentaikhoan = $req->Tentaikhoan;
-        $Tk->matkhau = $req->MatKhau;
+        $Tk->name = $req->name;
+        $Tk->email = $req->email;
         $Tk->loaitk = $req->LoaiTk;
         $Tk->trangthai = $req->TrangThai;
         $Tk -> save();    
@@ -56,7 +56,7 @@ class TaikhoanController extends Controller
         $Tk = Taikhoan::find($id);
         $Tk -> trangthai = 0;
         $Tk -> save();
-        $dstaikhoan = DB::table('Taikhoan')->where('trangthai','=','1')->get();    
+        $dstaikhoan = DB::table('Taikhoans')->where('trangthai','=','1')->get();    
         return redirect()->route('indexTk',compact('dstaikhoan'));
     } 
 }

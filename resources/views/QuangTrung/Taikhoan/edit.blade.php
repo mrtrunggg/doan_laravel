@@ -7,19 +7,18 @@
     <table>
         <tr>
             <th>Tên tài khoản:</th>
-            <td> <input type="text" name="Tentaikhoan" value="{{$thongtin->tentaikhoan}}" required></br></td>
+            <td> <input type="text" name="name" value="{{$thongtin->name}}" required></br></td>
 </tr>
 <tr>
             <th>Mật khẩu:</th>
-            <td>   <input type="password" name="MatKhau" value="{{$thongtin->matkhau}}" required></br></td>
+            <td>   <input type="text" name="email" value="{{$thongtin->email}}" required></br></td>
 </tr>
 <tr>
             <th>Loại Tài khoản</th>
             <td>        
                 <select name="LoaiTk" id="LoaiTk">
-                    <option value="Admin">Admin</option>
-                    <option value="Staff">Nhân viên</option>
-                    <option value="Customer">Khách hàng</option>                                
+                    <option value="2">Admin</option>
+                    <option value="1">Khách hàng</option>                                
                 </select>     
             </td>
         </tr>

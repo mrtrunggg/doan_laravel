@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Sanpham;
+use App\Models\Khachhang;
 use Illuminate\Support\Facades\DB;
 
 
@@ -15,32 +16,44 @@ class UserController extends Controller
 {
     function trangchu()
     {
-        $dsSP = DB::table('Sanpham')->where('trangthai','=','1')->get();   
-        return view('user.index',compact('dsSP'));
+        
+        $dsSPmoi = Sanpham::orderBy('id','DESC')->where('trangthai','=','1')->get(); 
+        
+        
+        $dsSPbanchay = DB::select('select Sanpham.*, SUM(CTHoadonban.soluomg) as so_luong_ban_ra from Sanpham,CTHoadonban
+        where Sanpham.id=CTHoadonban.sanpham_id
+        group by sanpham_id
+        order by Sum(CTHoadonban.soluomg) desc'); 
+        return view('user.index',compact('dsSPmoi','dsSPbanchay'));
     }
+
+
+
+
 
     function dssp()
     {
         $dsSP = DB::table('Sanpham')->where('trangthai','=','1')->get();   
         return view('user.shop',compact('dsSP'));
     }
-    function ttcn()
+
+    function ttcn($id)
     {
-        $KH = DB::table('Khachhang')->where('trangthai','=','1')->get();   
+        $KH =  Khachhang::find($id);      
         return view('user.profile',compact('KH'));
     }
-
-
     function ctsp($id)
     {
         $SP =  Sanpham::find($id);      
-        return view('user.product_detail',compact('SP'));
+        $dsSP = DB::table('Sanpham')->where('loaisanpham_id','=',$SP->loaisanpham_id)->get(); 
+   
+        return view('user.product_detail',compact('SP','dsSP'));
     }
 
     function timkiem(Request $req)
     {
-       $kq= DB::table('Sanpham')->where('sanpham_name','like','%'.$req->timkiem.'%')->get();
-       return view('user.timkiem',compact('kq'));
+       $dsSP= DB::table('Sanpham')->where('sanpham_name','like','%'.$req->timkiem.'%')->get();
+       return view('user.timkiem',compact('dsSP'));
     }
 }
 

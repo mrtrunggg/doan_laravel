@@ -12,7 +12,7 @@
                     Tên tài khoản
                 </th>
                 <th class="column2">
-                    Mật khẩu
+                    Email
                 </th>
                 <th class="column2">
                     Loại tài khoản
@@ -27,11 +27,11 @@
             
                 <tr>                   
                     <th class="column2">
-                        {{$a->tentaikhoan}}
+                        {{$a->name}}
                     </th>
                     <td class="column2">
-                        {{$a->matkhau}}
-                    </td class="column2">       
+                        {{$a->email}}
+                    </td>       
                     <td class="column2">
                         {{$a->loaitk}}
                     </td>
